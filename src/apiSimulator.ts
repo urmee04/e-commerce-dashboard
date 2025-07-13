@@ -23,18 +23,34 @@ export const fetchProductCatalog = (): Promise<Product[]> => {
     }, 1000);
   });
 };
+// -----------------------------------------------------------------------------
+//define an interace for reviews
+export interface Reviews {
+  productId: number;
+  rating: number;
+  review: string;
+}
 
 //Simulates fetching product reviews, each with product id
-export const fetchProductReviews = (): Promise<{ productId: number }[]> => {
+export const fetchProductReviews = (): Promise<Reviews[]> => {
   return new Promise((resolve, reject) => {
     //Resolve the promise with an array of reviews after a 1.5 second delay
     setTimeout(() => {
       //Use Math.random() to sometimes reject the Promise with an error message
       if (Math.random() < 0.8) {
-        resolve([{ productId: 1 }, { productId: 1 }]);
+        resolve([
+          { productId: 1, rating: 3.5, review: "Good Product" },
+          {
+            productId: 2,
+            rating: 5,
+            review: " Excellent Product",
+          },
+        ]);
       } else {
         reject("Failed to fetch reviews for product ID ${productId}");
       }
     }, 1500);
   });
 };
+
+//-------------------------------------------------------------------------------------
