@@ -54,3 +54,27 @@ export const fetchProductReviews = (): Promise<Reviews[]> => {
 };
 
 //-------------------------------------------------------------------------------------
+// define a reusable interface for sales report
+export interface Sales {
+  totalSales: number;
+  unitsSold: number;
+  averagePrice: number;
+}
+
+// Simulates fetching a sales report with totalSales, unitsSold, and averagePrice.
+
+export const fetchSalesReport = (): Promise<Sales> => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.8) {
+        resolve({
+          totalSales: 25000,
+          unitsSold: 25,
+          averagePrice: 1000,
+        });
+      } else {
+        reject("Failed to fetch sales report");
+      }
+    }, 1000);
+  });
+};
