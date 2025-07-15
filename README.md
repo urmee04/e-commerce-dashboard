@@ -76,3 +76,19 @@ Custom error classes such as NetworkError and DataError provide semantic clarity
 **When might a retry mechanism be more effective than an immediate failure response?**
 
 A retry mechanism is especially useful when dealing with transient or temporary failures that are likely to resolve themselves given a short delay. For example, network timeouts, brief connectivity losses, or temporary server overloads can often be resolved by simply trying the request again after a short interval. In such cases, immediately failing the request would result in a poor user experience and unnecessary frustration. Retry mechanisms can also be helpful when dealing with APIs that impose rate limits, allowing the application to wait and retry after the limit resets. However, retries are not effective for permanent errors such as logic bugs or invalid data formats; these require developer attention rather than automated recovery. By implementing a retry strategy selectively, applications can become more robust and responsive in real-world usage scenarios.
+
+---
+
+#### Resources
+
+Besides class lectures and class materials I used the following resources:
+
+- [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+- [error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+
+- [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+
+- [console.table()](https://developer.mozilla.org/en-US/docs/Web/API/console/table_static)
+
+- [TypeScript tutorial](https://www.youtube.com/watch?v=CHnTTzD1pAQ&list=PLHiZ4m8vCp9PgOOjdyNpc6AoBmKNrp_u3)
