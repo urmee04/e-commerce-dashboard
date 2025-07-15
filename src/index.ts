@@ -3,7 +3,7 @@
 /*Use fetchProductCatalog() to fetch product details and display them.
 For each product, fetch the reviews using fetchProductReviews(productId).
 After fetching products and reviews, retrieve the sales report using fetchSalesReport().*/
-import { error } from "console";
+
 import {
   Product,
   Reviews,
@@ -19,7 +19,7 @@ function displayProductData() {
   //Fetch product catalog and display products
   fetchProductCatalog()
     .then((products: Product[]) => {
-      console.log("Product Catalog");
+      console.log("Product Catalog:");
       products.forEach((product) => {
         console.log(
           `ID: ${product.id} Name: ${product.name} Price: ${product.price}`
